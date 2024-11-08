@@ -38,6 +38,7 @@ class Program
         {
             Console.WriteLine("Congratulation, You passed!");
         }
+        
         if (grade < 70)
         {
             Console.WriteLine($"You must have at least a 70 to pass the class");
