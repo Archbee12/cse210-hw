@@ -41,7 +41,7 @@ class Program
 
         static void DisplayResult(string name, int userSquare )
         {
-            Console.Write($"{name}, the square of your number is {userSquare}");
+            Console.WriteLine($"{name}, the square of your number is {userSquare}");
         }
     }
 }
