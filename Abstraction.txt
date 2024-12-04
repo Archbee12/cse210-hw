@@ -1,0 +1,32 @@
+Abstraction is the act of breaking down complex ideas or datas into simpler ones and removing characteristics so only essential ones remain, with the use of object which is a category representing either a person, or a thing, and breaking down what the person or thing entails or information of that object. The core benefit of abstraction is simplification of object which will then result to a class, 
+A good application of abstraction is the card payment which allows us to hide the characteristics of the complex details and show only the necessary parts to the user. 
+
+An example code is a Journal, it's class represents a collection of journal entries, the entry object is a list that will store the entries from the user in the journal. we create entries using the CreateEntries Method, the display method all the entries in the journal, the journal class takes away the complex characteristics of how the user entries are created, it only knows how to add entries and display them.
+
+public class Journal
+{
+  public List<Entry> _entries = new();
+  
+
+  public void CreateEntries()
+  {
+    _entries.Add(Entry.CreateEntries());
+  }
+
+  public void Display()
+  {
+    if (_entries.Count == 0)
+    {
+      Console.WriteLine("No entries in the journal.");
+    }
+
+    else 
+    {
+      Console.WriteLine("");
+      foreach (var entry in _entries)
+      {
+        entry.Display();
+      }
+    }
+    
+  }
