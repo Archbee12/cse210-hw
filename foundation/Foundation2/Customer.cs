@@ -1,9 +1,9 @@
 using System;
 
-class Customer 
+public class Customer 
 {
-  public string _name;
-  public Address _address;
+  private string _name;
+  private Address _address;
 
   public Customer(string name, Address address)
   {
@@ -21,5 +21,14 @@ class Customer
     return $"{_name}\n{_address}"; 
   }
 
+  public string GetName()
+  {
+    return _name;
+  }
+
+  public Address GetAddress()
+  {
+    return _address;
+  }
 
 }

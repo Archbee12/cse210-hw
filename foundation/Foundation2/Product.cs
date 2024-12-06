@@ -1,13 +1,13 @@
 using System;
 
-class Products
+public class Product
 {
-  public string _name;
-  public string _productID;
-  public double _price;
-  public double _quantity;
+  private string _name;
+  private string _productID;
+  private double _price;
+  private double _quantity;
 
-  public Products(string name, string productID, double price, double quantity)
+  public Product(string name, string productID, double price, double quantity)
   {
     _name = name;
     _productID = productID;
@@ -15,10 +15,34 @@ class Products
     _quantity = quantity;
   }
 
+
   public double TotalCost()
   {
     return _price * _quantity;
   }
 
-  
+  public override string ToString()
+  {
+    return $"{_name} (ID: {_productID})";
+  }
+
+  public string GetName()
+  {
+    return _name;
+  }
+
+  public string GetProductId()
+  {
+    return _productID;
+  }
+
+  public double GetPrice()
+  {
+    return _price;
+  }
+
+  public double GetQuantity()
+  {
+    return _quantity;
+  }
 }

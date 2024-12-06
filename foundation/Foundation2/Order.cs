@@ -2,7 +2,7 @@ using System;
 
 public class Order
 {
-  public Customer _customer;
+  private Customer _customer;
   private List<Product> _products = new List<Product>();
 
   public Order(Customer customer)
@@ -10,36 +10,42 @@ public class Order
     _customer = customer;
   }
 
-  public void AddProduct(Product products)
+  public void AddProduct(Product product)
   {
     _products.Add(product);
   }
 
-  public int CalculateTotalCost()
+  public double CalculateTotalCost()
   {
-    int totalSum = 0;
+    double totalSum = 0;
     foreach (var product in _products)
     {
-      totalSum += _products.TotalCost();
+      totalSum += product.TotalCost();
     }
 
-    int shippingCost = _customer.LivesInUSA() ? 5 : 35;
-    return totalSum + shippingCost;
+    double shippingCost = _customer.LivesInUSA() ? 5 : 35;
+    totalSum += shippingCost;
+    return totalSum;
   }
 
-  public string _packingLabel()
+  public string PackingLabel()
   {
     string label = "";
     foreach (var product in _products)
     {
-      label += product + "\n";
+      label += $"{product}\n";
     }
 
-    return label.TrimEnd()
+    return label.TrimEnd();
   }
 
   public string _shippingLabel()
   {
     return _customer.ToString();
+  }
+
+  public Customer GetCustomer()
+  {
+    return _customer;
   }
 }
