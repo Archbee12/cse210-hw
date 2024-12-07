@@ -19,29 +19,29 @@ public class Address
   {
     return _country.ToLower() == "usa";
   }
-  public override string ToString()
+  public string GetAddress()
   {
       return $"{_street}\n{_city}, {_state}\n{_country}";
   }
 
-  public string GetStreet()
-  {
-    return _street;
-  }
+  // public string GetStreet()
+  // {
+  //   return _street;
+  // }
 
-  public string GetCity()
-  {
-    return _city;
-  }
+  // public string GetCity()
+  // {
+  //   return _city;
+  // }
 
-  public string GetState()
-  {
-    return _state;
-  }
+  // public string GetState()
+  // {
+  //   return _state;
+  // }
 
-  public string GetCountry()
-  {
-    return _country;
-  }
+  // public string GetCountry()
+  // {
+  //   return _country;
+  // }
 
 }

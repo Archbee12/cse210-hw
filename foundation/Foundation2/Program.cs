@@ -17,7 +17,7 @@ public class Program
         Console.WriteLine("Packing Label:");
         Console.WriteLine(_order.PackingLabel());
         Console.WriteLine("\nShipping Label");
-        Console.WriteLine(_order._shippingLabel());
+        Console.WriteLine(_order.ShippingLabel());
         Console.WriteLine($"\nTotal Cost: ${_order.CalculateTotalCost():0.00}");
     }
 }

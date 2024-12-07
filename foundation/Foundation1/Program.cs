@@ -18,8 +18,9 @@ class Program
         video3.AddComment(new Comment("Gift", "Wow, now i understand ui/ux greatly."));
 
         video1.AddComment(new Comment("DeborahM", "well detailed video, Keep it up"));
-        video2.AddComment(new Comment("Sarah", "This is video is the best for last-minute review. I loveeee it"));
-        video3.AddComment(new Comment("Gift", "Epic.. Is there a video on the basics, I am kind of a slow learner"));
+        video2.AddComment(new Comment("Gift", "Epic.. Is there a video on the basics, I am kind of a slow learner"));
+        video3.AddComment(new Comment("Sarah", "This is video is the best for last-minute review. I loveeee it"));
+        
 
         // Adding videos to list
         List<Video> _videos = new List<Video> { video1, video2, video3 };

@@ -39,7 +39,7 @@ public class Order
     return label.TrimEnd();
   }
 
-  public string _shippingLabel()
+  public string ShippingLabel()
   {
     return _customer.ToString();
   }
