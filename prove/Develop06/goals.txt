@@ -1,0 +1,4 @@
+750
+SimpleGoal, Course work, Complete: True, Points: 50
+[ ] EternalGoal, [ ]Prayer: pray every morning and evening 50
+ChecklistGoal, fasting, fasting for 3 days, 250, 3, 3, 150

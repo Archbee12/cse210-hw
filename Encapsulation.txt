@@ -1,0 +1,15 @@
+Encapsulation simply means hiding the behaviours of a class, restricting direct access to parts of an information the object entails outside the code. which is the core benefit of encapsulation because it enhances maintenance. One application of encapsulation is online shopping cart. I once bought groceries from the mall, on getting to the cashier, my total on the screen wasn't the total of my groceries. So therefore, for an online shopping cart which allows user to add, remove and view items but not showing how the cart calculates the total is an application of encapsulation. We can modify our code to restrict access by using the "Private" keyword. 
+
+public class Scripture
+{
+  private Reference _reference;
+  private List<Word> _words;
+
+  public Scripture(Reference reference, string text)
+  {
+    _reference = reference;
+    _words = text.Split(' ').Select(w => new Word(w)).ToList();
+  }
+}
+
+The reference and words are declared private and they are encapsulated within the scripture class meaning their access is denied only the scripture class can modify them.
