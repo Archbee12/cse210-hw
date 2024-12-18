@@ -28,11 +28,11 @@ public class ChecklistGoal : Goal
 
   public override string GetDetailsString()
   {
-    return (_amountCompleted >= _target ? "[X] " : "[ ] ") + $"{GetName()} - {GetDescription()} (Completed {_amountCompleted}/{_target} times)";
+    return (_amountCompleted >= _target ? "[X] " : "[ ] ") + $"{GetName()} - {GetDescription()} -- Currently completed {_amountCompleted}/{_target} times)";
   }
 
   public override string GetStringRepresentation()
   {
-      return $"ChecklistGoal, {GetName()}, {GetDescription()}, {GetPoints()}, {_amountCompleted}, {_target}, {_bonus}";
+      return $"ChecklistGoal: {GetName()}, {GetDescription()}, {GetPoints()}, {_amountCompleted}, {_target}, {_bonus}";
   }
 }

@@ -1,0 +1,4 @@
+0
+SimpleGoal: savings, saving every monthend, 10 Points
+EternalGoal: [ ] Praying: daily prayer 20 Points
+ChecklistGoal: Attending Sacrament, 3 days sacrament in church., 20, 0, 2, 50

@@ -84,13 +84,28 @@ public class GoalManager
 
   private void CreateGoal()
   {
-    Console.WriteLine("\nThe types of Goals are:");
-    Console.WriteLine("1. Simple Goal");
-    Console.WriteLine("2. Eternal Goal");
-    Console.WriteLine("3. Checklist Goal");
-    Console.Write("Which type of goal would you like to create? ");
-    string _goalType = Console.ReadLine();
+    string _goalType;
 
+    while(true)
+    {
+      Console.WriteLine("\nThe types of Goals are:");
+      Console.WriteLine("1. Simple Goal");
+      Console.WriteLine("2. Eternal Goal");
+      Console.WriteLine("3. Checklist Goal");
+      Console.Write("Which type of goal would you like to create? ");
+      _goalType = Console.ReadLine();
+
+      if (_goalType == "1" || _goalType == "2" || _goalType == "3")
+      {
+        break;
+      }
+
+      else
+      {
+        Console.WriteLine("Invalid goal type, please try again.");
+      }
+    }
+    
     Console.Write("What is the name of your goal? ");
     string _name = Console.ReadLine();
     Console.Write("What is a short description of it? ");
@@ -110,18 +125,13 @@ public class GoalManager
 
     else if (_goalType == "3")
     {
-      Console.WriteLine("How many times does this goal needs to be accomplished for a bonus? ");
+      Console.Write("How many times does this goal needs to be accomplished for a bonus? ");
       int _target = int.Parse(Console.ReadLine());
-      Console.WriteLine("Enter bonus point: ");
+      Console.Write("Enter bonus point: ");
       int _bonus = int.Parse(Console.ReadLine());
       _goals.Add(new ChecklistGoal(_name, _description, _points, _target, _bonus));
     }
 
-    else 
-    {
-      Console.WriteLine("Invalid goal type.");
-      return;
-    }
     Console.WriteLine("Goal added successfully.");
   }
 
@@ -168,7 +178,7 @@ public class GoalManager
 
   public void SaveGoals()
   {
-    Console.Write("Enter filename to save: ");
+    Console.Write("What is the filename for the goal file? ");
     string fileName = Console.ReadLine();
     using (StreamWriter writer = new StreamWriter(fileName))
     {
@@ -180,43 +190,6 @@ public class GoalManager
     }
     Console.WriteLine($"Goals successfully saved to {fileName}.");
   }
-
-
-  // public void LoadGoals()
-  // {
-  //   Console.Write("Enter filename to load: ");
-  //   string fileName = Console.ReadLine();
-  //   if (File.Exists(fileName))
-  //   {
-  //     // _goals.Clear();
-  //     using (StreamReader reader = new StreamReader(fileName))
-  //     {
-  //       _score = int.Parse(reader.ReadLine());
-  //       string line;
-  //       while ((line = reader.ReadLine()) != null)
-  //       {
-  //         string[] parts = line.Split('|');
-  //         if (parts[0] == "SimpleGoal")
-  //         {
-  //           _goals.Add(new SimpleGoal(parts[1], parts[2], int.Parse(parts[3])));
-  //         }
-  //         else if (parts[0] == "EternalGoal")
-  //         {
-  //           _goals.Add(new EternalGoal(parts[1], parts[2], int.Parse(parts[3])));
-  //         }
-  //         else if (parts[0] == "ChecklistGoal")
-  //         {
-  //           _goals.Add(new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5])));
-  //         }
-  //       }
-  //     }
-  //     Console.WriteLine("Goals loaded successfully.");
-  //   }
-  //   else
-  //   {
-  //     Console.WriteLine("File not found. No data loaded.");
-  //   }
-  // }
 
   private void LoadGoals()
   {
